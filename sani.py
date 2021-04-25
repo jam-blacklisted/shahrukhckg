@@ -504,9 +504,8 @@ def idfrompost():
 		print banner
 		tez = raw_input("[+] Post ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+tez+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+tez+"/likes?access_token="+toket)
 			op = json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")
