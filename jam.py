@@ -115,7 +115,7 @@ def tlogin():
 	    tlogin()
 	try:
 		toket = open('login.txt','r')
-		os.system('python2 muskan.py')
+		os.system('python2 sani.py')
 	except (KeyError,IOError):
 		methodlogin()
 	else:
