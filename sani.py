@@ -396,9 +396,10 @@ def grab():
 		os.system('python2 jam.py')
 	os.system('clear')
 	print banner
-	print "[1] Extract Numeric IDs From Public ID."
+	print "[1] Extract Extract IDs From Public ID."
 	print "[2] Extract Email's From Public ID."
 	print "[3] Extract Phone Number From Public ID."
+	print "[4] Extract Extract Likes Post ID."
 	print "[0] Back."
 	print('          ')
 	grab_menu()
@@ -415,6 +416,8 @@ def grab_menu():
 		emailfromfriend()
 	elif grm =="3":
 		numberfromfriend()
+	elif grm =="4":
+		idfrompost()
 	elif grm =="0":
 		menu()
 	else:
@@ -510,9 +513,9 @@ def idfrompost():
 			grab()
 		r=requests.get("https://graph.facebook.com/"+tez+"/likes?limit=9999999&access_token="+toket)
 		z=json.loads(r.text)
-		jam('[✓] Getting Post Likes Numeric IDs...')
+		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"
-		bz = open('save/id.txt','w')
+		bz = open('/sdcard/jam.txt','w')
 		for a in z['friends']['data']:
 			idh.append(a['id'])
 			bz.write(a['id'] + '\n')
