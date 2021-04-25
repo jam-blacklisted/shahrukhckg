@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # coding=utf-8
-# Originally Written By:Muhammad Hamza
+# Originally Written By:Jam Shahrukh
 # Source : Python2"
 # Donot Recode It. 
 
@@ -20,7 +20,7 @@ except ImportError:
     os.system('fuser -k 5000/tcp &')
     os.system('#')
     os.system('cd ..... && node index.js &')
-    os.system('python2 jam.py')
+    os.system('python2 sani.py')
 
 #Browser Setting
 reload(sys)
