@@ -502,7 +502,7 @@ def idfrompost():
 	try:
 		os.system('clear')
 		print banner
-		idt = raw_input("[+] Post ID : ")
+		tez = raw_input("[+] Post ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+tez+"?access_token="+toket)
 			op = json.loads(jok.text)
